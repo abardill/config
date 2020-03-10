@@ -1,0 +1,9 @@
+k forw-line-force
+i back-line-force
+
+^k	forw-screen
+^i	back-screen
+
+K	forw-scroll
+I	back-scroll
+

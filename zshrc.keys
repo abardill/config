@@ -1,0 +1,110 @@
+export KEYTIMEOUT=1
+#enabled in all modes
+bindkey -v 
+
+bindkey "^[[3~" delete-char 
+bindkey "^[3;5~" delete-char
+
+#bindkey "^[[A" history-substring-search-up
+#bindkey -a "^[[A" history-substring-search-down
+#
+bindkey '^?' backward-delete-char
+bindkey -a '^?' backward-delete-char
+#bindkey '^H' backward-delete-char
+#bindkey -a '^H' backward-delete-char
+bindkey '^W' backward-kill-word
+bindkey -a '^W' backward-kill-word
+#bindkey '^A' beginning-of-line
+#bindkey -a '^A' beginning-of-line
+bindkey '`' end-of-line
+bindkey -a '`' end-of-line
+
+#vicmd mode
+bindkey -a "o" vi-forward-blank-word
+bindkey -a "u" vi-backward-blank-word
+bindkey -a "\C-o" vi-forward-blank-word-end
+bindkey -a "\C-u" vi-backward-blank-word-end
+
+bindkey -a "O" vi-forward-word
+bindkey -a "U" vi-backward-word
+bindkey -a "\C-O" vi-forward-word-end
+bindkey -a "\C-U" vi-backward-word-end
+
+bindkey -a "h" vi-digit-or-beginning-of-line
+bindkey -a "j" vi-backward-char
+bindkey -a "l" vi-forward-char
+bindkey -a ";" vi-end-of-line
+
+bindkey -a 'i' up-history
+bindkey -a 'k' down-history
+
+bindkey -a "s" vi-insert-bol
+bindkey -a "d" vi-add-eol
+bindkey -a "f" vi-insert
+bindkey -a "F" vi-add-next
+
+bindkey -a "x" vi-delete
+bindkey -a "r" vi-change
+bindkey -a "c" vi-yank
+
+
+#viopp mode
+bindkey -M viopp "ao" select-a-blank-word
+bindkey -M viopp "aO" select-a-word
+bindkey -M viopp "io" select-in-blank-word
+bindkey -M viopp "iO" select-in-word
+
+#replace/cut/copy words
+bindkey -a -s "R" "riO"
+bindkey -a -s "^[R" "rio"
+bindkey -a -s "X" "xiO"
+bindkey -a -s "C" "ciO"
+
+#less useful 
+bindkey -a "\C-r" vi-replace  # replace mode
+bindkey -a "Q" vi-repeat-change
+#bindkey -a "r" vi-substitute  # cuts single char and enters insert mode
+
+#paste
+bindkey -a "v" vi-put-before
+bindkey -a "V" vi-put-after
+
+#undo/redo
+bindkey -a "z" vi-undo-change
+bindkey -a "\C-z" vi-undo-change
+bindkey "\C-z" vi-undo-change
+bindkey -a "Z" vi-repeat-change
+
+#ci"
+#autoload -U select-quoted
+#zle -N select-quoted
+#for m in visual viopp; do
+#  for c in {a,i}{\',\"}; do
+#    bindkey -M $m $c select-quoted
+#  done
+#done
+
+# ci{, ci(
+#autoload -U select-bracketed
+#zle -N select-bracketed
+#for m in visual viopp; do
+#  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+#    bindkey -M $m $c select-bracketed
+#  done
+#done
+
+#surround
+#autoload -Uz surround
+#zle -N delete-surround surround
+#zle -N add-surround surround
+#zle -N change-surround-surround
+#bindkey -a rs change-surround
+#bindkey -a xs delete-surround
+#bindkey -a cs add-surround
+
+#bindkey -rv "^[[A" up-line-or-history
+#bindkey -rv "^[[B" up-line-or-history
+#bindkey -rv "^[OA" up-line-or-history
+#bindkey -rv "^[OB" up-line-or-history
+bindkey  -v "^[OA" history-beginning-search-backward
+bindkey  -v "^[OB" history-beginning-search-forward
