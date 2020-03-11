@@ -44,7 +44,7 @@ alias l="ls -lathr --color"
 alias bv="bcftools view"
 alias bq="bcftools query -f '%CHROM\t%ID\t%POS\t%REF\t%ALT\n'"
 alias bqq="bcftools +split-vep -s all -d -A tab  -f '%CHROM\t%ID\t%POS\t%REF\t%ALT\t%CSQ\n'"
-alias hg="history -E | grep"
+alias gh="history -E | grep"
 alias awkt='awk -vFS="\t" -vOFS="\t"'
 alias le='less -NS'
 alias rl="readlink -f"
