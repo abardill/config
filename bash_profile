@@ -6,5 +6,6 @@ if [ -f ~/.bashrc ]; then
 fi
 
 
+export PATH="$HOME/bin:$PATH"
 export SHELL="$HOME/bin/zsh"
 exec $HOME/bin/zsh -l
